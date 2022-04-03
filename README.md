@@ -27,7 +27,6 @@ This will put the results in `$(pwd)/out` on your host machine. The timeout for 
 ### CBMC
 
 `docker build -f cbmc.Dockerfile . -t cbmc-pa`
-`docker run -e SUT_SRC=Prob16-R12-B3.c -v $(pwd)/out:/out cbmc-pa`
 
-@TODO confirm that CBMC info is entirely printed to std-out
+`docker run -e SUT_SRC=Prob16-R12-B3.c -v $(pwd)/out:/out cbmc-pa`
 
