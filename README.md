@@ -30,3 +30,10 @@ This will put the results in `$(pwd)/out` on your host machine. The timeout for 
 
 `docker run -e SUT_SRC=Prob16-R12-B3.c -v $(pwd)/out:/out cbmc-pa`
 
+### TRACERX
+
+`docker build -f tracerx.Dockerfile . -t tracerx-pa`
+
+`docker run -e SUT_SRC=Prob16-R12-B3.c -v $(pwd)/out:/out tracerx-pa`
+
+@TODO timeout for TRACERX
