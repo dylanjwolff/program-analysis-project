@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:21.10
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get -y update
 RUN apt-get -y --fix-missing install cbmc
@@ -16,5 +16,6 @@ COPY sample-programs/CBMC-VERSION $SUTS
 VOLUME $OUT
 
 ENV BOUND=5
-CMD timeout ${TIME_LIMIT_SECS}s cbmc $SUTS/$SUT_SRC --cover mcdc --unwind $BOUND --timestamp wall --json-ui --outfile $OUT/cbmc-out.json --flush 2>&1 | tee $OUT/log.txt
+
+CMD timeout ${TIME_LIMIT_SECS}s cbmc $SUTS/$SUT_SRC --unwind $BOUND --timestamp wall --flush --json-ui 2>&1 | tee $OUT/log.json
 
