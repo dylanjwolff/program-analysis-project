@@ -18,7 +18,7 @@ def get_tallies(afl_out_dir, program):
     # Just an example... not sure if we want percentage or the actual numbers
     # @TODO currently using region coverage, but branch coverage is certainly better here;
     #   Should figure out why branch coverage isn't being reported properly
-    coverage = (data["data"][0]["totals"]["regions"]["percent"])
+    coverage = (data["data"][0]["totals"]["branches"]["percent"])
     return (coverage, len(crashes))
 
 afl_out_dir = os.path.join(os.path.dirname(os.getcwd()), "out")

@@ -1,8 +1,9 @@
-FROM ubuntu:20.04
+FROM ubuntu:21.10
 ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y
 RUN apt update -y
-RUN apt install -y llvm-12 git clang vim python3
+ENV LLVM_VER=13
+RUN apt install -y llvm-$LLVM_VER git clang vim python3
 
 ENV WORKDIR=/opt
 
