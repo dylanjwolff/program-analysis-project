@@ -17,5 +17,5 @@ VOLUME $OUT
 
 ENV BOUND=5
 
-CMD timeout ${TIME_LIMIT_SECS}s cbmc $SUTS/$SUT_SRC --unwind $BOUND --timestamp wall --flush --json-ui 2>&1 | tee $OUT/log.json
+CMD timeout ${TIME_LIMIT_SECS}s cbmc $SUTS/$SUT_SRC --cover branch --unwind $BOUND --timestamp wall --flush --json-ui 2>&1 | tee $OUT/log.json
 

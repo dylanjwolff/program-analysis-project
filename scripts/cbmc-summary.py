@@ -1,0 +1,64 @@
+import json
+import sys
+import os
+from dateutil.parser import parse
+
+# Note: Expecting a JSON file output by CBMC 5.12 (or with whatever settings you used), similar to the coverage.json given
+# The ones output by CBMC 5.10 were significantly less complete
+
+# Use {} to indicate where the testcase file name should be
+FILE_PATH = "out/cbmc/{}/log.txt"
+
+# Toggle whether to display detailed goals/inputs or not
+SHOW_GOALS = True
+SHOW_INPUTS = True
+
+def get_tallies(cbmc_out_dir, program):
+    goals_covered = -1
+    total_goals = -1
+    goals_list = []
+
+    tests_generated = -1
+    tests_list = []
+    assertion_errors = 0
+
+    first_timestamp = None
+    last_timestamp = None
+
+    with open(os.path.join(cbmc_out_dir, "log.json"), "r") as f:
+        contents = json.load(f)
+
+    for obj in contents:
+
+        if "timestamp" in obj:
+            if first_timestamp is None:
+                first_timestamp = parse(obj["timestamp"])
+            last_timestamp = parse(obj["timestamp"])
+
+        # Check for assertion errors; assumes that all those are marked with ERROR_VIOLATION
+        if "messageText" in obj and obj["messageText"].endswith("ERROR_VIOLATION"):
+            assertion_errors += 1
+
+        # Look for the object containing the goals
+        if "goals" in obj:
+            goals_covered = obj["goalsCovered"]
+            total_goals = obj["totalGoals"]
+            for goal in obj["goals"]:
+                goals_list.append((goal["goal"], int(goal["sourceLocation"]["line"]), goal["description"], goal["status"]))
+
+        # Look for the object containing the tests
+        if "tests" in obj:
+            tests_generated = len(obj["tests"])
+            for ipt in obj["tests"]:
+                tests_list.append({i["id"]: i["value"]["data"] for i in ipt["inputs"]})
+
+    completed = not tests_generated == -1
+    elapsed = (last_timestamp - first_timestamp)
+    return (goals_covered, total_goals, completed, assertion_errors, elapsed)
+
+
+if __name__ == "__main__":
+    cbmc_out_dir = os.path.join(os.path.dirname(os.getcwd()), "out")
+    program = "Prob16-R12-B3.c"
+
+    print(get_tallies(cbmc_out_dir, program))
