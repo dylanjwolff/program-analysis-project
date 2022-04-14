@@ -21,17 +21,17 @@ def get_tallies(afl_out_dir, program):
 
     with open(os.path.join(afl_out_dir, "default", "fuzzer_stats"), 'r') as f:
         stat_lines = f.readlines()
-        start = None
-        end = None
-        for line in stat_lines:
-            if "start_time" in line and start is None:
-                start = line.split(':')[1].strip()
-            if "last_update" in line and end is None:
-                end = line.split(':')[1].strip()
-            if not start is None and not end is None:
-                break
+    start = None
+    end = None
+    for line in stat_lines:
+        if "start_time" in line and start is None:
+            start = line.split(':')[1].strip()
+        if "last_update" in line and end is None:
+            end = line.split(':')[1].strip()
+        if not start is None and not end is None:
+            break
 
-        elapsed = datetime.datetime.fromtimestamp(int(end)) -  datetime.datetime.fromtimestamp(int(start))
+    elapsed = datetime.datetime.fromtimestamp(int(end)) -  datetime.datetime.fromtimestamp(int(start))
 
     return (branches["covered"], branches["count"], False, len(crashes), elapsed)
 

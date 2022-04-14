@@ -6,13 +6,6 @@ from dateutil.parser import parse
 # Note: Expecting a JSON file output by CBMC 5.12 (or with whatever settings you used), similar to the coverage.json given
 # The ones output by CBMC 5.10 were significantly less complete
 
-# Use {} to indicate where the testcase file name should be
-FILE_PATH = "out/cbmc/{}/log.txt"
-
-# Toggle whether to display detailed goals/inputs or not
-SHOW_GOALS = True
-SHOW_INPUTS = True
-
 def get_tallies(cbmc_out_dir, program):
     goals_covered = -1
     total_goals = -1
