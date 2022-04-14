@@ -12,7 +12,7 @@ sut_src_name = os.getenv("SUT_SRC")
 
 sut_src = os.path.join(suts_dir, sut_src_name)
 
-o = sp.getoutput(f"clang -fprofile-instr-generate -fcoverage-mapping -include stdio.h {sut_src} -o sut")
+o = sp.getoutput(f"clang -fprofile-instr-generate -fcoverage-mapping -include stdio.h -include assert.h {sut_src} -o sut")
 print(o)
 
 testcases = glob.glob(f"{testcases_dir}/*")

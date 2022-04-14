@@ -18,8 +18,22 @@ def get_tallies(cbmc_out_dir, program):
     first_timestamp = None
     last_timestamp = None
 
-    with open(os.path.join(cbmc_out_dir, "log.json"), "r") as f:
+    f = open(os.path.join(cbmc_out_dir, "log.json"), "r")
+    try:
         contents = json.load(f)
+    except:
+        f.close()
+        f = open(os.path.join(cbmc_out_dir, "log.json"), "a+")
+        f.write("\n]") # HACK for incomplete JSON log
+        f.close()
+        try:
+            f = open(os.path.join(cbmc_out_dir, "log.json"), "r")
+            contents = json.load(f)
+        except:
+            raise Exception(f"LOAD problem for {cbmc_out_dir}\n")
+        finally:
+            f.close()
+
 
     for obj in contents:
 
@@ -47,7 +61,7 @@ def get_tallies(cbmc_out_dir, program):
 
     completed = not tests_generated == -1
     elapsed = (last_timestamp - first_timestamp)
-    return (goals_covered, total_goals, completed, assertion_errors, elapsed)
+    return (goals_covered, total_goals, assertion_errors, completed, elapsed)
 
 
 if __name__ == "__main__":
