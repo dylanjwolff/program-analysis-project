@@ -30,9 +30,15 @@ def get_tallies(cbmc_out_dir, program):
             f = open(os.path.join(cbmc_out_dir, "log.json"), "r")
             contents = json.load(f)
         except:
-            raise Exception(f"LOAD problem for {cbmc_out_dir}\n")
-        finally:
             f.close()
+            f = open(os.path.join(cbmc_out_dir, "log.json"), "a+")
+            f.write("\n}]") # HACK for incomplete JSON log
+            f.close()
+            try:
+                f = open(os.path.join(cbmc_out_dir, "log.json"), "r")
+                raise Exception(f"LOAD problem for {cbmc_out_dir}\n")
+            finally:
+                f.close()
 
 
     for obj in contents:
@@ -48,8 +54,10 @@ def get_tallies(cbmc_out_dir, program):
 
         # Look for the object containing the goals
         if "goals" in obj:
-            goals_covered = obj["goalsCovered"]
-            total_goals = obj["totalGoals"]
+            if "goalsCovered" in obj:
+                goals_covered = obj["goalsCovered"]
+            if "totalGoals" in obj:
+                total_goals = obj["totalGoals"]
             for goal in obj["goals"]:
                 goals_list.append((goal["goal"], int(goal["sourceLocation"]["line"]), goal["description"], goal["status"]))
 

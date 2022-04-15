@@ -8,29 +8,35 @@ import afl_summary
 import klee_summary
 import tracerx_summary
 import cbmc_summary
+import pandas as pd
+
 
 
 def post_process(outdir, program, tool, trial):
-    if tool == "afl":
+    if "afl" in tool:
         summary = afl_summary.get_tallies(outdir, program)
-    elif tool == "klee":
+    elif "klee" in tool:
         summary = klee_summary.get_tallies(outdir, program)
-    elif tool == "tracerx":
+    elif "tracerx" in tool:
         summary = tracerx_summary.get_tallies(outdir, program)
-    elif tool == "cbmc":
+    elif "cbmc" in tool:
         summary = cbmc_summary.get_tallies(outdir, program)
-    print(summary)
+    summary = tuple([tool, program, trial] + list(summary))
+    print(".", end="", flush=True)
+    return summary
 
 if __name__ == '__main__':
+
     skip_experiment = True
     basedir = os.path.dirname(os.getcwd())
     timeout_secs = 60
-    num_trials = 1
+    num_trials = 2
+    local_user = "wolffd"
 
     progs = glob.glob(f"{basedir}/sample-programs/AFL-VERSION/*")
 
     prognames = [os.path.basename(f) for f in progs]
-    tools = ["klee", "tracerx", "cbmc", "afl"]
+    tools = ["klee", "tracerx", "cbmc", "afl", "klee-merge", "tracerx-noext", "cbmc-cvc4", "afl-laf"]
     trials = range(0, num_trials)
 
     build_cmds = []
@@ -44,6 +50,7 @@ if __name__ == '__main__':
     for progname in prognames:
         for tool in tools:
             for trial in trials:
+
                 progname_as_dir = os.path.splitext(progname)[0]
                 outdir = os.path.join(basedir, "out", tool, progname_as_dir, str(trial))
                 if not skip_experiment:
@@ -69,8 +76,17 @@ if __name__ == '__main__':
                 for errout in errouts:
                     f.write(errout)
                 f.write("\n\n\n==========================================\n\n")
-            sp.getoutput("sudo chown -R wolffd ../out")
 
+            # Containers are mostly running as root, not worth fixing for small project
+            sp.getoutput("sudo chown -R {wolffd} ../out")
+            sp.getoutput("sudo chmod a+w ../out/**/log.json")
+
+            # Create a backup of the raw run data
+            sp.getoutput("tar -zcvf out.tar.gz ../out/")
+        else:
+            print("using existing data")
+
+        print("Post processing...")
         configs = []
         for prog_path in progs:
            for tool in tools:
@@ -79,6 +95,9 @@ if __name__ == '__main__':
                    progname_as_dir = os.path.splitext(progname)[0]
                    outdir = os.path.join(basedir, "out", tool, progname_as_dir, str(trial))
                    configs.append((outdir, progname, tool, trial))
-        print(configs)
         results = p.starmap(post_process, configs)
+        print("\ndone!")
+        columns = ["tool", "program", "trial", "branches_covered", "total_branches", "assertions_reached", "completed", "elapsed_time"]
+        results = pd.DataFrame(results, columns=columns)
         print(results)
+        results.to_csv("out.csv")
