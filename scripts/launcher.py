@@ -78,7 +78,7 @@ if __name__ == '__main__':
                 f.write("\n\n\n==========================================\n\n")
 
             # Containers are mostly running as root, not worth fixing for small project
-            sp.getoutput("sudo chown -R {wolffd} ../out")
+            sp.getoutput(f"sudo chown -R {local_user} ../out")
             sp.getoutput("sudo chmod a+w ../out/**/log.json")
 
             # Create a backup of the raw run data
