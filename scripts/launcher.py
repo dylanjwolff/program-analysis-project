@@ -27,24 +27,34 @@ def post_process(outdir, program, tool, trial):
 
 if __name__ == '__main__':
 
-    skip_experiment = True
+    skip_experiment = False
     basedir = os.path.dirname(os.getcwd())
-    timeout_secs = 60
-    num_trials = 2
+    timeout_secs = 1800
+    num_trials = 5
     local_user = "wolffd"
 
     progs = glob.glob(f"{basedir}/sample-programs/AFL-VERSION/*")
 
     prognames = [os.path.basename(f) for f in progs]
-    tools = ["klee", "tracerx", "cbmc", "afl", "klee-merge", "tracerx-noext", "cbmc-cvc4", "afl-laf"]
+    ind_tools = ["klee", "tracerx", "cbmc", "afl"]
+    dep_tools = ["klee-merge", "tracerx-noext", "cbmc-cvc4", "afl-laf"]
+    tools = ind_tools + dep_tools
     trials = range(0, num_trials)
 
-    build_cmds = []
-    for tool in tools + ["llvm-cov"]:
+    ind_build_cmds = []
+    for tool in ind_tools + ["llvm-cov"]:
         tdfn = f"{tool}.Dockerfile"
         tdfp = os.path.join(basedir, tdfn)
-        dfcmd = [f"docker build -f {tdfp} {basedir} -t {tool}"]
-        build_cmds.append(dfcmd)
+        dfcmd = [f"docker build -f {tdfp} {basedir} -t {tool}-pa"]
+        ind_build_cmds.append(dfcmd)
+
+    dep_build_cmds = []
+    for tool in dep_tools + ["llvm-cov"]:
+        tdfn = f"{tool}.Dockerfile"
+        tdfp = os.path.join(basedir, tdfn)
+        dfcmd = [f"docker build -f {tdfp} {basedir} -t {tool}-pa"]
+        dep_build_cmds.append(dfcmd)
+
 
     cmds = []
     for progname in prognames:
@@ -62,13 +72,22 @@ if __name__ == '__main__':
     print(f"Starting pool with {nproc} workers")
     with Pool(processes=nproc) as p:
         if not skip_experiment:
-            results = p.map(sp.getstatusoutput, build_cmds)
+            results = p.map(sp.getstatusoutput, ind_build_cmds)
             errouts = [out for (status, out) in results if not status == 0]
             if len(errouts) > 0:
-                print("Build errors")
+                print("Ind Build errors")
                 print("++++++++++++++\n\n".join(errouts))
             else:
-                print("Build success")
+                print("Ind Build success")
+
+            results = p.map(sp.getstatusoutput, dep_build_cmds)
+            errouts = [out for (status, out) in results if not status == 0]
+            if len(errouts) > 0:
+                print("Dep Build errors")
+                print("++++++++++++++\n\n".join(errouts))
+            else:
+                print("Dep Build success")
+
 
             results = p.map(sp.getstatusoutput, cmds)
             errouts = [out for (status, out) in results if not status == 0]
