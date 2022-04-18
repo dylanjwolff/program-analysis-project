@@ -1,0 +1,711 @@
+[
+  {
+    "program": "CBMC 5.12 (cbmc-5.12)"
+  },
+  {
+    "messageText": "CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.571978"
+  },
+  {
+    "messageText": "Parsing /out/cbmc-hard.c",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.584406"
+  },
+  {
+    "messageText": "Converting",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.592195"
+  },
+  {
+    "messageText": "Type-checking cbmc-hard",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.592237"
+  },
+  {
+    "messageText": "function 'nondet_int' is not declared",
+    "messageType": "WARNING",
+    "sourceLocation": {
+      "file": "/out/cbmc-hard.c",
+      "function": "main",
+      "line": "14",
+      "workingDirectory": "/opt"
+    },
+    "timestamp": "2022-04-18T10:53:03.594146"
+  },
+  {
+    "messageText": "Generating GOTO Program",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.598292"
+  },
+  {
+    "messageText": "Adding CPROVER library (x86_64)",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.598725"
+  },
+  {
+    "messageText": "Removal of function pointers and virtual functions",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.598789"
+  },
+  {
+    "messageText": "Generic Property Instrumentation",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.598952"
+  },
+  {
+    "messageText": "Rewriting existing assertions as assumptions",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.599444"
+  },
+  {
+    "messageText": "Running with 8 object bits, 56 offset bits (default)",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.599668"
+  },
+  {
+    "messageText": "Starting Bounded Model Checking",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.599766"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 1 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.601991"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 2 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.602434"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 3 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.603074"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 4 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.603738"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 5 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.604368"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 6 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.605148"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 7 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.605692"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 8 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.606244"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 9 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.606789"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 10 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.607324"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 11 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.607872"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 12 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.608403"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 13 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.609067"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 14 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.609675"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 15 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.610432"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 16 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.611213"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 17 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.611986"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 18 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.612630"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 19 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.613375"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 20 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.613921"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 21 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.614455"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 22 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.615024"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 23 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.615606"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 24 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.616242"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 25 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.616977"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 26 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.617711"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 27 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.618375"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 28 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.618973"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 29 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.619591"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 30 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.620227"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 31 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.620883"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 32 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.621578"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 33 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.622311"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 34 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.622944"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 35 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.623602"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 36 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.624110"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 37 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.624920"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 38 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.625574"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 39 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.626167"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 40 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.626845"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 41 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.627836"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 42 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.628614"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 43 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.629537"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 44 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.630434"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 45 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.631075"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 46 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.631660"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 47 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.632354"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 48 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.633040"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 49 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.633677"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 50 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.634335"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 51 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.635079"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 52 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.635949"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 53 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.636678"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 54 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.637516"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 55 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.638199"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 56 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.638871"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 57 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.639539"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 58 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.640178"
+  },
+  {
+    "messageText": "Unwinding loop invmod.0 iteration 59 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.640882"
+  },
+  {
+    "messageText": "Not unwinding loop invmod.0 iteration 60 file /out/cbmc-hard.c line 3 function invmod thread 0",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.641552"
+  },
+  {
+    "messageText": "aborting path on assume(false) at file /out/cbmc-hard.c line 19 function main thread 0: ERROR_VIOLATION",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.647455"
+  },
+  {
+    "messageText": "size of program expression: 779 steps",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.647953"
+  },
+  {
+    "messageText": "Generated 246 VCC(s), 185 remaining after simplification",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.648058"
+  },
+  {
+    "messageText": "Passing problem to propositional reduction",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.648164"
+  },
+  {
+    "messageText": "converting SSA",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.648180"
+  },
+  {
+    "messageText": "Running propositional reduction",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.763052"
+  },
+  {
+    "messageText": "Post-processing",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.763199"
+  },
+  {
+    "messageText": "Solving with MiniSAT 2.2.1 with simplifier",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.763255"
+  },
+  {
+    "messageText": "79459 variables, 344421 clauses",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:53:03.763270"
+  },
+  {
+    "messageText": "SAT checker: instance is SATISFIABLE",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:31.268734"
+  },
+  {
+    "messageText": "Runtime decision procedure: 87.6207s",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:31.268827"
+  },
+  {
+    "messageText": "Building error trace",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:31.268843"
+  },
+  {
+    "messageText": "Running propositional reduction",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:31.269711"
+  },
+  {
+    "messageText": "Solving with MiniSAT 2.2.1 with simplifier",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:31.269761"
+  },
+  {
+    "messageText": "79459 variables, 226471 clauses",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:31.269775"
+  },
+  {
+    "messageText": "SAT checker: instance is SATISFIABLE",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:31.508612"
+  },
+  {
+    "messageText": "Runtime decision procedure: 0.238991s",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:31.508704"
+  },
+  {
+    "messageText": "Building error trace",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:31.508720"
+  },
+  {
+    "messageText": "Running propositional reduction",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:31.511131"
+  },
+  {
+    "messageText": "Solving with MiniSAT 2.2.1 with simplifier",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:31.511259"
+  },
+  {
+    "messageText": "79459 variables, 220359 clauses",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:31.511299"
+  },
+  {
+    "messageText": "SAT checker: instance is SATISFIABLE",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:32.189864"
+  },
+  {
+    "messageText": "Runtime decision procedure: 0.678827s",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:32.189949"
+  },
+  {
+    "messageText": "Building error trace",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:32.189977"
+  },
+  {
+    "messageText": "Running propositional reduction",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:32.191273"
+  },
+  {
+    "messageText": "Solving with MiniSAT 2.2.1 with simplifier",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:32.191405"
+  },
+  {
+    "messageText": "79459 variables, 33251 clauses",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:32.191427"
+  },
+  {
+    "messageText": "SAT checker: instance is SATISFIABLE",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:33.952014"
+  },
+  {
+    "messageText": "Runtime decision procedure: 1.76083s",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:33.952100"
+  },
+  {
+    "messageText": "Building error trace",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:33.952114"
+  },
+  {
+    "goals": [
+      {
+        "description": "block 3 branch true",
+        "goal": "invmod.coverage.5",
+        "sourceLocation": {
+          "file": "/out/cbmc-hard.c",
+          "function": "invmod",
+          "line": "4",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      },
+      {
+        "description": "block 3 branch false",
+        "goal": "invmod.coverage.4",
+        "sourceLocation": {
+          "file": "/out/cbmc-hard.c",
+          "function": "invmod",
+          "line": "4",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      },
+      {
+        "description": "block 2 branch true",
+        "goal": "invmod.coverage.3",
+        "sourceLocation": {
+          "file": "/out/cbmc-hard.c",
+          "function": "invmod",
+          "line": "3",
+          "workingDirectory": "/opt"
+        },
+        "status": "failed"
+      },
+      {
+        "description": "block 2 branch false",
+        "goal": "invmod.coverage.2",
+        "sourceLocation": {
+          "file": "/out/cbmc-hard.c",
+          "function": "invmod",
+          "line": "3",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      },
+      {
+        "description": "entry point",
+        "goal": "invmod.coverage.1",
+        "sourceLocation": {
+          "file": "/out/cbmc-hard.c",
+          "function": "invmod",
+          "line": "2",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      },
+      {
+        "description": "block 3 branch true",
+        "goal": "main.coverage.5",
+        "sourceLocation": {
+          "file": "/out/cbmc-hard.c",
+          "function": "main",
+          "line": "17",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      },
+      {
+        "description": "block 3 branch false",
+        "goal": "main.coverage.4",
+        "sourceLocation": {
+          "file": "/out/cbmc-hard.c",
+          "function": "main",
+          "line": "17",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      },
+      {
+        "description": "block 1 branch true",
+        "goal": "main.coverage.3",
+        "sourceLocation": {
+          "file": "/out/cbmc-hard.c",
+          "function": "main",
+          "line": "16",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      },
+      {
+        "description": "block 1 branch false",
+        "goal": "main.coverage.2",
+        "sourceLocation": {
+          "file": "/out/cbmc-hard.c",
+          "function": "main",
+          "line": "16",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      },
+      {
+        "description": "entry point",
+        "goal": "main.coverage.1",
+        "sourceLocation": {
+          "file": "/out/cbmc-hard.c",
+          "function": "main",
+          "line": "12",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      }
+    ],
+    "goalsCovered": 9,
+    "totalGoals": 10
+  },
+  {
+    "messageText": "** 9 of 10 covered (90.0%)",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:33.953541"
+  },
+  {
+    "messageText": "** Used 5 iterations",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-18T10:54:33.953608"
+  },
+  {
+    "tests": [
+      {
+        "coveredGoals": [ "main.coverage.1", "main.coverage.3" ],
+        "inputs": [
+          {
+            "id": "x",
+            "value": {
+              "binary": "01101110111100110100011001111000",
+              "data": "1861437048",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          }
+        ]
+      },
+      {
+        "coveredGoals": [ "main.coverage.1", "main.coverage.2", "invmod.coverage.1", "invmod.coverage.2", "invmod.coverage.5" ],
+        "inputs": [
+          {
+            "id": "x",
+            "value": {
+              "binary": "00000000000000000000000011111110",
+              "data": "254",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          }
+        ]
+      },
+      {
+        "coveredGoals": [ "main.coverage.1", "main.coverage.2", "main.coverage.5", "invmod.coverage.1", "invmod.coverage.2", "invmod.coverage.4", "invmod.coverage.5" ],
+        "inputs": [
+          {
+            "id": "x",
+            "value": {
+              "binary": "00000000000000000000111110100001",
+              "data": "4001",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          }
+        ]
+      },
+      {
+        "coveredGoals": [ "main.coverage.1", "main.coverage.2", "main.coverage.4", "invmod.coverage.1", "invmod.coverage.2", "invmod.coverage.4", "invmod.coverage.5" ],
+        "inputs": [
+          {
+            "id": "x",
+            "value": {
+              "binary": "00000000000000000101111110000010",
+              "data": "24450",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
