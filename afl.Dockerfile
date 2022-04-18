@@ -12,4 +12,5 @@ RUN mkdir -p $OUT
 RUN echo "0" > $SEEDS/empty_seed.txt
 COPY sample-programs/AFL-VERSION $SUTS
 VOLUME $OUT
-CMD afl-clang-fast -include assert.h -include stdio.h $SUTS/$SUT_SRC -o sut; timeout ${TIME_LIMIT_SECS}s afl-fuzz -i $SEEDS -o $OUT -m 50 -C -- ./sut
+COPY scripts/afl-entrypoint.py afl-entrypoint.py
+CMD python3 afl-entrypoint.py
