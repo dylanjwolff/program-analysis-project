@@ -9,6 +9,7 @@ import klee_summary
 import tracerx_summary
 import cbmc_summary
 import pandas as pd
+import re
 
 
 
@@ -25,12 +26,20 @@ def post_process(outdir, program, tool, trial):
     print(".", end="", flush=True)
     return summary
 
+BOUND_RE = re.compile("-B(\d+)")
+def get_bound(name, default=5):
+    global BOUND_RE
+    m = BOUND_RE.search(name)
+    if m is None:
+        return default
+    return int(m.group(1))
+
 if __name__ == '__main__':
 
     skip_experiment = False
     basedir = os.path.dirname(os.getcwd())
-    timeout_secs = 1800
-    num_trials = 5
+    timeout_secs = 10
+    num_trials = 1
     local_user = "wolffd"
 
     progs = glob.glob(f"{basedir}/sample-programs/AFL-VERSION/*")
@@ -58,14 +67,19 @@ if __name__ == '__main__':
 
     cmds = []
     for progname in prognames:
+        bound = get_bound(progname)
         for tool in tools:
-            for trial in trials:
+            if "cbmc" in tool:
+                bound_str = f"-e BOUND={bound}"
+            else:
+                bound_str = ""
 
+            for trial in trials:
                 progname_as_dir = os.path.splitext(progname)[0]
                 outdir = os.path.join(basedir, "out", tool, progname_as_dir, str(trial))
                 if not skip_experiment:
                     os.makedirs(outdir)
-                cmd = f"docker run -e TIME_LIMIT_SECS={timeout_secs} -e SUT_SRC={progname} -v {outdir}:/out {tool}-pa"
+                cmd = f"docker run -e TIME_LIMIT_SECS={timeout_secs} {bound_str} -e SUT_SRC={progname} -v {outdir}:/out {tool}-pa"
                 cmds.append(cmd)
 
     nproc = multiprocessing.cpu_count()
