@@ -72,4 +72,20 @@ winners = winners[["branches_covered", "branch percentage", "assertions_reached"
 branch_wins = winners["branches_covered"].value_counts()
 branchp_wins = winners["branch percentage"].value_counts()
 ass_wins = winners["assertions_reached"].value_counts()
-print(ass_wins)
+wins = {}
+for tool in sorted_tools:
+    wins[tool] = {}
+    if tool in ass_wins:
+        wins[tool]["Asserstions Reached"] = ass_wins[tool]
+    else:
+        wins[tool]["Asserstions Reached"] = 0
+    if tool in branch_wins:
+        wins[tool]["Branches Covered"] = branch_wins[tool]
+    else:
+        wins[tool]["Branches Covered"] = 0
+    if tool in branchp_wins:
+        wins[tool]["Percentage of Total Branches"] = branchp_wins[tool]
+    else:
+        wins[tool]["Percentage of Total Branches"] = 0
+wins_df = pd.DataFrame(wins)
+print(wins_df)
