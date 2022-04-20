@@ -8,6 +8,7 @@ import afl_summary
 import klee_summary
 import tracerx_summary
 import cbmc_summary
+import cbmc_verify_summary
 import pandas as pd
 import re
 
@@ -20,8 +21,11 @@ def post_process(outdir, program, tool, trial):
         summary = klee_summary.get_tallies(outdir, program)
     elif "tracerx" in tool:
         summary = tracerx_summary.get_tallies(outdir, program)
-    elif "cbmc" in tool:
+    elif "cbmc" in tool and "verify" not in tool:
         summary = cbmc_summary.get_tallies(outdir, program)
+    elif "cbmc" in tool:
+        summary = cbmc_verify_summary.get_tallies(outdir, program)
+
     summary = tuple([tool, program, trial] + list(summary))
     print(".", end="", flush=True)
     return summary
@@ -36,7 +40,7 @@ def get_bound(name, default=5):
 
 if __name__ == '__main__':
 
-    skip_experiment = False
+    skip_experiment = True
     basedir = os.path.dirname(os.getcwd())
     timeout_secs = 10
     num_trials = 1
@@ -45,8 +49,8 @@ if __name__ == '__main__':
     progs = glob.glob(f"{basedir}/sample-programs/AFL-VERSION/*")
 
     prognames = [os.path.basename(f) for f in progs]
-    ind_tools = ["klee", "tracerx", "cbmc", "afl"]
-    dep_tools = ["klee-merge", "tracerx-noext", "cbmc-cvc4", "afl-laf"]
+    ind_tools = ["klee", "tracerx", "cbmc", "afl", "cbmc-verify"]
+    dep_tools = ["klee-merge", "tracerx-noext", "cbmc-cvc4", "afl-laf", "cbmc-verify-pa"]
     tools = ind_tools + dep_tools
     trials = range(0, num_trials)
 
