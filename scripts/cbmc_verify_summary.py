@@ -10,6 +10,7 @@ def get_tallies(cbmc_out_dir, program):
     goals_covered = -1
     total_goals = -1
     goals_list = []
+    completed = False
 
     tests_generated = -1
     tests_list = []
@@ -48,7 +49,6 @@ def get_tallies(cbmc_out_dir, program):
                 first_timestamp = parse(obj["timestamp"])
             last_timestamp = parse(obj["timestamp"])
 
-        # Check for assertion errors; assumes that all those are marked with ERROR_VIOLATION
         if "result" in obj:
             completed = True
             for res in obj["result"]:

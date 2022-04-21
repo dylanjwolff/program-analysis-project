@@ -42,15 +42,15 @@ if __name__ == '__main__':
 
     skip_experiment = True
     basedir = os.path.dirname(os.getcwd())
-    timeout_secs = 10
-    num_trials = 1
+    timeout_secs = 1800
+    num_trials = 3
     local_user = "wolffd"
 
     progs = glob.glob(f"{basedir}/sample-programs/AFL-VERSION/*")
 
     prognames = [os.path.basename(f) for f in progs]
-    ind_tools = ["klee", "tracerx", "cbmc", "afl", "cbmc-verify"]
-    dep_tools = ["klee-merge", "tracerx-noext", "cbmc-cvc4", "afl-laf", "cbmc-verify-pa"]
+    ind_tools = ["cbmc-verify"] # ["klee", "tracerx", "cbmc", "afl", "cbmc-verify"]
+    dep_tools = ["cbmc-verify-cvc4"] # ["klee-merge", "tracerx-noext", "cbmc-cvc4", "afl-laf", "cbmc-verify-cvc4"]
     tools = ind_tools + dep_tools
     trials = range(0, num_trials)
 
