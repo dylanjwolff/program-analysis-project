@@ -1,0 +1,371 @@
+[
+  {
+    "program": "CBMC 5.12 (cbmc-5.12)"
+  },
+  {
+    "messageText": "CBMC version 5.12 (cbmc-5.12) 64-bit x86_64 linux",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.953824"
+  },
+  {
+    "messageText": "Parsing /out/cbmc-prod.c",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.972863"
+  },
+  {
+    "messageText": "Converting",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.982236"
+  },
+  {
+    "messageText": "Type-checking cbmc-prod",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.982311"
+  },
+  {
+    "messageText": "function 'nondet_int' is not declared",
+    "messageType": "WARNING",
+    "sourceLocation": {
+      "file": "/out/cbmc-prod.c",
+      "function": "main",
+      "line": "7",
+      "workingDirectory": "/opt"
+    },
+    "timestamp": "2022-04-22T15:15:04.984747"
+  },
+  {
+    "messageText": "Generating GOTO Program",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.991440"
+  },
+  {
+    "messageText": "Adding CPROVER library (x86_64)",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.992162"
+  },
+  {
+    "messageText": "Removal of function pointers and virtual functions",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.992413"
+  },
+  {
+    "messageText": "Generic Property Instrumentation",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.992816"
+  },
+  {
+    "messageText": "Rewriting existing assertions as assumptions",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.993571"
+  },
+  {
+    "messageText": "Running with 8 object bits, 56 offset bits (default)",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.993839"
+  },
+  {
+    "messageText": "Starting Bounded Model Checking",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.993909"
+  },
+  {
+    "messageText": "aborting path on assume(false) at file /out/cbmc-prod.c line 14 function main thread 0: ERROR_VIOLATION",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.996869"
+  },
+  {
+    "messageText": "size of program expression: 62 steps",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.997240"
+  },
+  {
+    "messageText": "Generated 5 VCC(s), 5 remaining after simplification",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.997296"
+  },
+  {
+    "messageText": "Passing problem to propositional reduction",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.997330"
+  },
+  {
+    "messageText": "converting SSA",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:04.997342"
+  },
+  {
+    "messageText": "Running propositional reduction",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.007076"
+  },
+  {
+    "messageText": "Post-processing",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.007146"
+  },
+  {
+    "messageText": "Solving with MiniSAT 2.2.1 with simplifier",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.007197"
+  },
+  {
+    "messageText": "5924 variables, 29151 clauses",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.007209"
+  },
+  {
+    "messageText": "SAT checker: instance is SATISFIABLE",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.021456"
+  },
+  {
+    "messageText": "Runtime decision procedure: 0.0241974s",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.021538"
+  },
+  {
+    "messageText": "Building error trace",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.021555"
+  },
+  {
+    "messageText": "Running propositional reduction",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.021871"
+  },
+  {
+    "messageText": "Solving with MiniSAT 2.2.1 with simplifier",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.021897"
+  },
+  {
+    "messageText": "5924 variables, 27381 clauses",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.021924"
+  },
+  {
+    "messageText": "SAT checker: instance is SATISFIABLE",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.023259"
+  },
+  {
+    "messageText": "Runtime decision procedure: 0.0014555s",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.023332"
+  },
+  {
+    "messageText": "Building error trace",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.023346"
+  },
+  {
+    "messageText": "Running propositional reduction",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.023712"
+  },
+  {
+    "messageText": "Solving with MiniSAT 2.2.1 with simplifier",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.023877"
+  },
+  {
+    "messageText": "5924 variables, 27381 clauses",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.023903"
+  },
+  {
+    "messageText": "SAT checker: instance is SATISFIABLE",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.031712"
+  },
+  {
+    "messageText": "Runtime decision procedure: 0.008066s",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.031781"
+  },
+  {
+    "messageText": "Building error trace",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.031795"
+  },
+  {
+    "goals": [
+      {
+        "description": "block 2 branch true",
+        "goal": "main.coverage.5",
+        "sourceLocation": {
+          "file": "/out/cbmc-prod.c",
+          "function": "main",
+          "line": "12",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      },
+      {
+        "description": "block 2 branch false",
+        "goal": "main.coverage.4",
+        "sourceLocation": {
+          "file": "/out/cbmc-prod.c",
+          "function": "main",
+          "line": "12",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      },
+      {
+        "description": "block 1 branch true",
+        "goal": "main.coverage.3",
+        "sourceLocation": {
+          "file": "/out/cbmc-prod.c",
+          "function": "main",
+          "line": "11",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      },
+      {
+        "description": "block 1 branch false",
+        "goal": "main.coverage.2",
+        "sourceLocation": {
+          "file": "/out/cbmc-prod.c",
+          "function": "main",
+          "line": "11",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      },
+      {
+        "description": "entry point",
+        "goal": "main.coverage.1",
+        "sourceLocation": {
+          "file": "/out/cbmc-prod.c",
+          "function": "main",
+          "line": "7",
+          "workingDirectory": "/opt"
+        },
+        "status": "satisfied"
+      }
+    ],
+    "goalsCovered": 5,
+    "totalGoals": 5
+  },
+  {
+    "messageText": "** 5 of 5 covered (100.0%)",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.032141"
+  },
+  {
+    "messageText": "** Used 4 iterations",
+    "messageType": "STATUS-MESSAGE",
+    "timestamp": "2022-04-22T15:15:05.032161"
+  },
+  {
+    "tests": [
+      {
+        "coveredGoals": [ "main.coverage.1", "main.coverage.3" ],
+        "inputs": [
+          {
+            "id": "x",
+            "value": {
+              "binary": "01110000000000000000001101100010",
+              "data": "1879049058",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          },
+          {
+            "id": "y",
+            "value": {
+              "binary": "00000000000101110011110110100111",
+              "data": "1523111",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          },
+          {
+            "id": "z",
+            "value": {
+              "binary": "00000000000000101000000101110101",
+              "data": "164213",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          }
+        ]
+      },
+      {
+        "coveredGoals": [ "main.coverage.1", "main.coverage.2", "main.coverage.5" ],
+        "inputs": [
+          {
+            "id": "x",
+            "value": {
+              "binary": "00000000000000000000001101100010",
+              "data": "866",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          },
+          {
+            "id": "y",
+            "value": {
+              "binary": "00000000000000000000010110100111",
+              "data": "1447",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          },
+          {
+            "id": "z",
+            "value": {
+              "binary": "00000000000000000000010101001100",
+              "data": "1356",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          }
+        ]
+      },
+      {
+        "coveredGoals": [ "main.coverage.1", "main.coverage.2", "main.coverage.4" ],
+        "inputs": [
+          {
+            "id": "x",
+            "value": {
+              "binary": "00000000000000000000000111010010",
+              "data": "466",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          },
+          {
+            "id": "y",
+            "value": {
+              "binary": "00000000000000000000011010101111",
+              "data": "1711",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          },
+          {
+            "id": "z",
+            "value": {
+              "binary": "00000000000000000000010101001101",
+              "data": "1357",
+              "name": "integer",
+              "type": "signed int",
+              "width": 32
+            }
+          }
+        ]
+      }
+    ]
+  }
+]
