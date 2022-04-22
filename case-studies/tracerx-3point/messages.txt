@@ -1,0 +1,4 @@
+KLEE: ERROR: /out/tracerx-3point.c:36: ASSERTION FAIL: 0
+KLEE: NOTE: now ignoring this error at this location
+KLEE: Memory cap NOT exceeded!
+

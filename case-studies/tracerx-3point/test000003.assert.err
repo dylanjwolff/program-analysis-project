@@ -1,0 +1,6 @@
+Error: ASSERTION FAIL: 0
+File: /out/tracerx-3point.c
+Line: 36
+assembly.ll line: 130
+Stack: 
+	#000000130 in main () at /out/tracerx-3point.c:36

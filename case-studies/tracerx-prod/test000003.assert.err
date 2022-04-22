@@ -1,0 +1,6 @@
+Error: ASSERTION FAIL: 0
+File: /out/tracerx-prod.c
+Line: 20
+assembly.ll line: 89
+Stack: 
+	#000000089 in main () at /out/tracerx-prod.c:20

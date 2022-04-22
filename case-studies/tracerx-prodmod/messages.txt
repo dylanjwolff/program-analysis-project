@@ -1,0 +1,4 @@
+KLEE: ERROR: /out/tracerx-prodmod.c:21: ASSERTION FAIL: 0
+KLEE: NOTE: now ignoring this error at this location
+KLEE: Memory cap NOT exceeded!
+
