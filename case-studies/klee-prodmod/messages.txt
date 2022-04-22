@@ -1,0 +1,3 @@
+KLEE: Using STP solver backend
+KLEE: ERROR: /out/klee-prodmod.c:21: ASSERTION FAIL: 0
+KLEE: NOTE: now ignoring this error at this location

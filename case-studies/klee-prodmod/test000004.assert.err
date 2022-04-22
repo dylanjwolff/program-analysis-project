@@ -1,0 +1,6 @@
+Error: ASSERTION FAIL: 0
+File: /out/klee-prodmod.c
+Line: 21
+assembly.ll line: 79
+Stack: 
+	#000000079 in main () at /out/klee-prodmod.c:21

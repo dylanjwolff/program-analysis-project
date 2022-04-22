@@ -1,0 +1,21 @@
+array x[4] : w32 -> w8 = symbolic
+array y[4] : w32 -> w8 = symbolic
+(query [(Sle 4294966296
+              N0:(ReadLSB w32 0 x))
+         (Sle N0 1000)
+         (Sle 4294966296
+              N1:(ReadLSB w32 0 y))
+         (Sle N1 1000)
+         (Sle 559000
+              N2:(Add w32 (Mul w32 N3:(Add w32 4294966652 N0) N3)
+                          (Mul w32 N4:(Add w32 4294967276 N1) N4)))
+         (Sle N2 560000)
+         (Sle 194000
+              N5:(Add w32 (Mul w32 N6:(Add w32 387 N0) N6)
+                          (Mul w32 N7:(Add w32 569 N1) N7)))
+         (Sle N5 195000)
+         (Sle 804000
+              N8:(Add w32 (Mul w32 N9:(Add w32 592 N0) N9)
+                          (Mul w32 N10:(Add w32 4294966935 N1) N10)))
+         (Sle N8 805000)]
+        false)

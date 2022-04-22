@@ -1,0 +1,6 @@
+Error: ASSERTION FAIL: 0
+File: /out/klee-3point.c
+Line: 36
+assembly.ll line: 112
+Stack: 
+	#000000112 in main () at /out/klee-3point.c:36
