@@ -1,5 +1,5 @@
 int FLOOR = 123456789;
-int WIDTH = 1000000000;
+int WIDTH = 100000000;
 
 int main(void) {
     int x; scanf("%d", &x);
